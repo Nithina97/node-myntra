@@ -1,6 +1,10 @@
 const { Schema , model } = require("mongoose");
 
-const ProfileSchema = new Schema({
+const ProfileSchema = new Schema(
+    {
+    photo: {
+        type: [""],
+    },
     firstname: {
         type:String,
         required: true,
@@ -9,9 +13,18 @@ const ProfileSchema = new Schema({
         type:String,
         required: true,
     },
+    designation:{
+        type:String,
+        required:true,
+    },
     phone: {
         type:String,
         required: true,
+    },
+    skills: {
+        type:[""],
+        required: true,
+        default:false,
     },
     address: {
         type:String,
@@ -19,7 +32,7 @@ const ProfileSchema = new Schema({
     },
     alt_address: {
         type:String,
-        required: true,
+        
     },
     gender: {
         type:String,
