@@ -1,12 +1,24 @@
-//ROUTER LEVEL MIDDLEWARE 
+//ROUTER LEVEL MIDDLEWARE
 const express = require("express");
 const router = express.Router();
 
 //@ http method GET
-//@description its profile get information
+//@description its AUTH get information
 //@access PUBLIC
-router.get("/" , (req,res) => {
-    res.send("i am auth router");
+
+/*=======================LOGIN GET ROUTE =========================*/
+router.get('/login', (req, res) => {
+  res.render('./auth/login')
+})
+
+/*=======================REGISTER GET ROUTE =========================*/
+router.get("/register", (req, res) => {
+res.render("./auth/register");
 });
 
+//@ http method POST
+//@description its AUTH get information
+//@access PUBLIC
+/*=======================LOGIN POST ROUTE =========================*/
+/*=======================REGISTER POST ROUTE =========================*/
 module.exports = router;
